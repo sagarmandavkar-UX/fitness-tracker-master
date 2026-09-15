@@ -26,4 +26,4 @@ Fitness Freak is dedicated to democratizing access to healthcare information and
 **Collaborations**: Ongoing partnerships with healthcare and wellness experts to ensure Fitness Freak remains a one-stop shop for holistic wellness.
 
 ## Get Started:
-Visit our website at https://fitness-freak-tracker.vercel.app/ to explore our resources, sign up for personalized plans, and join a supportive community dedicated to holistic wellness.
+Clone this repository, copy `.env.example` to `.env`, add your service credentials, and run `npm install` followed by `npm start`.
