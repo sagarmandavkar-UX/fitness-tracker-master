@@ -1,0 +1,106 @@
+.pricing-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.premium-card {
+  border: 2px solid #ff4d4f;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.price-container {
+  margin-bottom: 20px;
+}
+
+.card-price {
+  color: #ff4d4f;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.savings-text {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.card-features {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.feature {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.feature::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ff4d4f;
+}
+
+.early-bird-offer {
+  background-color: #fff1f0;
+  border-radius: 4px;
+  color: #ff4d4f;
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subscribe-btn {
+  background-color: #ff4d4f;
+  border: 2px solid #ff4d4f;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+}
+
+.subscribe-btn:hover {
+  background-color: #ffffff;
+  color: #ff4d4f;
+}
+
+/* For the premium plan card, we'll keep the white button with red text */
+.premium-card .subscribe-btn {
+  background-color: #ffffff;
+  color: #ff4d4f;
+}
+
+.premium-card .subscribe-btn:hover {
+  background-color: #ff4d4f;
+  color: #ffffff;
+}

@@ -1,0 +1,511 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #101b18;
+  --eucalyptus: #173f36;
+  --lime: #c9ff3d;
+  --lime-soft: #ddff85;
+  --warm-white: #f7f5ef;
+  --paper: #ffffff;
+  --muted: #52615c;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background: var(--warm-white);
+  color: var(--ink);
+}
+
+/* Specific styles for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+  
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  
+  }
+  
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Firefox scrollbar styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  * {
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus styles */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: rgba(201, 255, 61, 0.35);
+  color: inherit;
+}
+
+/* Performance atelier redesign */
+.App {
+  min-height: 100vh;
+  background: var(--warm-white);
+}
+
+.exercise-discovery {
+  width: min(100%, 1360px);
+  margin: 0 auto;
+  padding: clamp(64px, 8vw, 110px) clamp(20px, 6vw, 74px) 24px;
+  color: var(--ink);
+}
+
+.section-heading-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(240px, 0.7fr);
+  align-items: end;
+  gap: 48px;
+  margin-bottom: 30px;
+}
+
+.editorial-heading {
+  max-width: 900px;
+  font-family: Impact, "Arial Narrow", "Helvetica Neue Condensed", sans-serif !important;
+  font-size: clamp(2.8rem, 5.4vw, 5.4rem) !important;
+  font-weight: 900 !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.045em !important;
+  text-transform: uppercase;
+}
+
+.section-intro {
+  max-width: 310px;
+  padding-bottom: 6px;
+  color: var(--muted);
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+}
+
+.exercise-search-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.exercise-results {
+  width: min(100%, 1360px);
+  margin: 0 auto;
+  padding: 10px clamp(20px, 6vw, 74px) clamp(64px, 8vw, 110px);
+  scroll-margin-top: 88px;
+}
+
+.results-heading {
+  margin: 20px 0 24px !important;
+  color: var(--eucalyptus);
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+}
+
+.exercise-card {
+  flex: 1 1 260px;
+  width: min(100%, 290px);
+  max-width: 304px;
+  min-height: 368px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 27, 24, 0.11);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.exercise-card img {
+  width: 100%;
+  height: 252px;
+  object-fit: cover;
+  background: #edf0ed;
+  filter: saturate(0.82) contrast(1.05);
+}
+
+.exercise-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.exercise-tag {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #edf0ed;
+  color: #3e4e48;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
+.exercise-arrow {
+  flex: 0 0 auto;
+  color: var(--eucalyptus);
+  transition: transform 0.22s ease;
+}
+
+.exercise-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(23, 63, 54, 0.28);
+  box-shadow: 0 22px 48px rgba(16, 27, 24, 0.12);
+}
+
+.exercise-card:hover .exercise-arrow {
+  transform: translateX(4px);
+}
+
+.MuiPaginationItem-root.Mui-selected {
+  background: var(--eucalyptus) !important;
+  color: var(--lime) !important;
+}
+
+body.dark-mode .App,
+body.dark-mode .exercise-discovery,
+body.dark-mode .exercise-results {
+  background: var(--ink);
+  color: var(--warm-white);
+}
+
+body.dark-mode .editorial-heading {
+  color: var(--warm-white);
+}
+
+body.dark-mode .section-intro,
+body.dark-mode .results-heading {
+  color: rgba(247, 245, 239, 0.66);
+}
+
+body.dark-mode .bmi-calculator {
+  background: var(--eucalyptus);
+  color: var(--warm-white);
+}
+
+body.dark-mode .bmi-calculator label,
+body.dark-mode .bmi-calculator h2 {
+  color: var(--warm-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .section-heading-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .exercise-search-form {
+    flex-direction: column;
+  }
+
+  .exercise-card {
+    max-width: 420px;
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+.responsive-logo {
+  width: 100%;
+  max-width: 1500px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .responsive-logo {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  .right-arrow,
+  .left-arrow {
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #C9FF3D;
+    font-size: 25px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: -20px;
+    right: 80px;
+    transform: scale(1, 1);
+    transition: 0.3s all ease-in-out;
+  }
+  
+  .right-arrow {
+    right: 140px;
+  }
+  
+  .right-arrow:hover,
+  .left-arrow:hover {
+    transform: scale(1.3, 1.3);
+  }
+  
+  .react-horizontal-scrolling-menu--wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .redButton {
+    background-color: red !important; /* Important to override Material-UI styles */
+    color: white !important; /* Text color */
+  }
+  .detail-image {
+    width: 729px;
+    height: 742px;
+  }
+  
+  .exercise-video {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 387px;
+    height: 381px;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width:1200px) {
+    .detail-image {
+      width: 300px;
+      height: 300px;
+    }
+  
+  
+    .react-horizontal-scrolling-menu--scroll-container {
+      width: 500px;
+    }
+  
+    .left-arrow,
+    .right-arrow {
+      position: static !important;
+    }
+  
+    .exercise-video {
+      width: 320px;
+      height: 300px;
+    }
+  
+  }
+  
+  /* App.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}

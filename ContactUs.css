@@ -1,0 +1,83 @@
+
+.outerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: white;
+  padding: 2rem;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  background-color: red;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.contacts {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-family: 'Greycliff CF', sans-serif;
+  color: #333;
+}
+
+.description {
+  margin-bottom: 2rem;
+}
+
+.info {
+  margin-bottom: 1rem;
+}
+
+.subtle-text {
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+.control {
+  background-color: red !important;
+  color: white !important;
+}
+
+.control:hover {
+  background-color: red !important;
+}
+
+.success {
+  color: green;
+  margin-top: 1rem;
+}
+
+.danger {
+  color: red;
+  margin-top: 1rem;
+}
+
+@media (max-width: 960px) {
+  .wrapper {
+    padding: 1rem;
+  }
+  
+  .contacts, .form {
+    padding: 1rem;
+  }
+}

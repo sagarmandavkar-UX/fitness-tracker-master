@@ -1,0 +1,190 @@
+/* Chat Page Styles */
+
+/* Dark mode styles will be handled via MUI theming */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Smooth animation for suggestion cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse animation for processing indicator */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Smooth sliding animation for messages */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations to elements */
+.user-message-animation {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.bot-message-animation {
+  animation: slideInLeft 0.3s ease-out forwards;
+}
+
+.suggestion-card-animation {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.processing-animation {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Code for fitness-themed scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(220, 20, 20, 0.6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #173F36;
+}
+
+.dark-mode .card, 
+.dark-mode .alert-info, 
+.dark-mode .list-group-item {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark-mode .card-title,
+.dark-mode .card-text,
+.dark-mode .alert-info,
+.dark-mode .list-group-item,
+.dark-mode-message {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .bg-primary {
+  background-color: #3f51b5 !important;
+}
+
+.dark-mode .bg-light {
+  background-color: #333 !important;
+}
+
+.suggestion-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.suggestion-card:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(220, 20, 20, 0.1);
+  }
+  50% {
+    background-color: rgba(220, 20, 20, 0.2);
+  }
+  100% {
+    background-color: rgba(220, 20, 20, 0.1);
+  }
+}
+
+.user-message-animation {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.bot-message-animation {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.processing-animation {
+  animation: pulse 1.5s infinite;
+}
+
+.suggestion-card-animation {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Footer link hover effect */
+.footer-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #173F36 !important;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #173F36;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
