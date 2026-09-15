@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { Box, CssBaseline, createTheme, ThemeProvider, Button, Container, Paper, Typography } from '@mui/material';
-import { Analytics } from '@vercel/analytics/react';
 import PricingCard from "./components/PricingCard";
 import "./assets/css/PricingApp.css";
 import './App.css';
@@ -160,10 +159,6 @@ const App = () => {
     },
   });
 
-  const handleManageSubscription = () => {
-    window.location.href = 'https://billing.stripe.com/p/login/14k3dfaXYePY8i4aEE';
-  };
-
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
@@ -171,7 +166,6 @@ const App = () => {
         <Navbar 
           darkMode={darkMode} 
           setDarkMode={setDarkMode}
-          onManageSubscription={handleManageSubscription}
         />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -186,7 +180,7 @@ const App = () => {
               minHeight: 'calc(100vh - 200px)'
             }}>
               <Container maxWidth="lg">
-                <PageTitle title="Our Pricing Plans" />
+                <PageTitle title="Pricing Strategy Concept" />
                 <Paper 
                   elevation={3} 
                   sx={{
@@ -201,7 +195,7 @@ const App = () => {
                 >
                   <Box sx={{ textAlign: 'center', mb: 4 }}>
                     <Typography variant="body1" sx={{ mb: 3, fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
-                      Fitness Freak's free plan gives you limited access to exercises for just two body parts and three uses of the workout planner per week. Want more? Check out our premium options below to support this awesome initiative and level up your health.
+                      This page demonstrates a possible freemium packaging strategy for PulseForm. Pricing and conversion actions are illustrative and are not connected to a live payment account.
                     </Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3 }}>
                       <Button
@@ -266,7 +260,6 @@ const App = () => {
           <Footer darkMode={darkMode} />
         )}
       </Box>
-      <Analytics />
     </ThemeProvider>
   );
 };

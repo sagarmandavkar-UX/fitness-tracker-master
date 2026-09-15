@@ -24,18 +24,12 @@ const PricingCard = ({
   ).toFixed(2);
 
   const handleSubscribe = () => {
-    let paymentLink;
-    if (title === "Premium Plan") {
-      paymentLink = isMonthly
-        ? "https://buy.stripe.com/00gbMycltcV69pu8wy"
-        : "https://buy.stripe.com/3csdUG99hdZa0SYaEH";
-      window.location.href = paymentLink;
-    } else {
+    if (typeof handleGetStarted === 'function') {
       handleGetStarted();
     }
   };
 
-  const buttonText = title === "Basic Plan" ? "Get Started for Free" : "Subscribe Now";
+  const buttonText = title === "Basic Plan" ? "Explore Free Plan" : "Product Concept";
   const features = [storage, users, sendUp];
 
   return (
@@ -125,6 +119,7 @@ const PricingCard = ({
           variant="contained" 
           fullWidth 
           onClick={handleSubscribe}
+          disabled={typeof handleGetStarted !== 'function'}
           sx={{
             bgcolor: title === "Premium Plan" ? '#173F36' : 'white',
             color: title === "Premium Plan" ? 'white' : '#173F36',

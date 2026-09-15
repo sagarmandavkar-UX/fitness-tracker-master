@@ -1,11 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Box, Typography, TextField, Button, Stack, Paper, Container, Grid, Alert } from '@mui/material';
-import emailjs from 'emailjs-com'; 
 import '../assets/css/ContactUs.css';
 import '../App.css'
 import SendIcon from '@mui/icons-material/Send';
-import EmailIcon from '@mui/icons-material/Email';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const ContactUs = ({ darkMode }) => {
   const formInitialDetails = {
@@ -28,33 +25,15 @@ const ContactUs = ({ darkMode }) => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setButtonText('Sending...');
-
-    try {
-      const result = await emailjs.sendForm(
-        'service_rbtsw68',
-        'template_v158ado',
-        form.current,
-        'hTBYd6aOdPZpStIVU'
-      );
-
-      console.log(result.text);
-      setStatus({
-        success: true,
-        message: 'Message sent successfully!'
-      });
-      setButtonText('Send');
-      setFormDetails(formInitialDetails);
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      setStatus({
-        success: false,
-        message: `Failed to send message: ${error.text}`
-      });
-      setButtonText('Send');
-    }
+    setButtonText('Saved');
+    setStatus({
+      success: true,
+      message: 'Thanks—your feedback was captured in this product prototype.'
+    });
+    setFormDetails(formInitialDetails);
+    window.setTimeout(() => setButtonText('Send'), 1200);
   };
 
   return (
@@ -260,7 +239,7 @@ const ContactUs = ({ darkMode }) => {
                   mb: 3
                 }}
               >
-                Get In Touch
+                Product Feedback
               </Typography>
               <Typography 
                 variant="body1" 
@@ -272,30 +251,9 @@ const ContactUs = ({ darkMode }) => {
                   fontFamily: '"Inter", sans-serif',
                 }}
               >
-                Have questions about our fitness programs or need personalized advice? 
-                Our team of expert trainers and nutritionists are here to help you 
-                achieve your fitness goals.
+                Use this screen to evaluate the feedback journey for the PulseForm product concept. It demonstrates the intended experience without sending information to an inherited account or external inbox.
               </Typography>
-              <Stack spacing={3}>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <EmailIcon sx={{ color: '#173F36', mr: 2, fontSize: 28 }} />
-                  <Typography variant="body1" sx={{ fontFamily: '"Inter", sans-serif' }}>
-                    svatsal@umich.edu
-                  </Typography>
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <LocationOnIcon sx={{ color: '#173F36', mr: 2, fontSize: 28 }} />
-                  <Typography variant="body1" sx={{ fontFamily: '"Inter", sans-serif' }}>
-                    Ann Arbor, Michigan
-                  </Typography>
-                </Box>
-                {/* <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <PhoneIcon sx={{ color: '#173F36', mr: 2, fontSize: 28 }} />
-                  <Typography variant="body1" sx={{ fontFamily: '"Inter", sans-serif' }}>
-                    +1 (555) 123-4567
-                  </Typography>
-                </Box> */}
-              </Stack>
+              <Alert severity="info">Portfolio mode: submissions stay in the interface and are not transmitted.</Alert>
             </Box>
           </Grid>
         </Grid>

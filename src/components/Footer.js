@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { Alert, Box, Button, Container, Divider, Fade, Grid, IconButton, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, Container, Divider, Fade, Grid, TextField, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Logo from '../assets/images/Logo-v2.png';
 
 const footerLinks = [
@@ -11,7 +8,7 @@ const footerLinks = [
   ['Chat', '/chat'],
   ['Personalized Workout', '/personalized-workout'],
   ['Pricing', '/pricing'],
-  ['Contact Us', '/contact'],
+  ['Product Feedback', '/contact'],
 ];
 
 const programs = ['Strength Training', 'Weight Loss', 'Mobility & Flexibility', 'General Fitness'];
@@ -44,22 +41,11 @@ const Footer = () => {
           <Grid item xs={12} md={4}>
             <Box className="brand-lockup" sx={{ mb: 2.5 }}>
               <img src={Logo} alt="" className="brand-mark" />
-              <Typography component="span" className="brand-name">Fitness<br /><strong>Freak</strong></Typography>
+              <Typography component="span" className="brand-name">Pulse<br /><strong>Form</strong></Typography>
             </Box>
             <Typography sx={{ maxWidth: 330, color: 'rgba(247,245,239,0.64)', fontSize: '14px', lineHeight: 1.7 }}>
-              Real guidance. Lasting progress. Discover exercises, create personalized workouts, and build a healthier, stronger you.
+              A personal product-management case study exploring a clearer path from fitness discovery to action.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 0.5, mt: 2.5 }}>
-              {[
-                ['linkedin', 'https://www.linkedin.com/in/vatsal-shah0914/', <LinkedInIcon />],
-                ['instagram', 'https://www.instagram.com/fitness_freak_/?hl=en', <InstagramIcon />],
-                ['youtube', 'https://www.youtube.com/@fitnessfreak3075', <YouTubeIcon />],
-              ].map(([label, href, icon]) => (
-                <IconButton key={label} aria-label={label} component="a" href={href} target="_blank" rel="noopener noreferrer" sx={{ color: '#C9FF3D', '&:hover': { color: '#F7F5EF', bgcolor: 'rgba(255,255,255,0.06)' } }}>
-                  {icon}
-                </IconButton>
-              ))}
-            </Box>
           </Grid>
 
           <Grid item xs={6} sm={3} md={2}>
@@ -111,8 +97,8 @@ const Footer = () => {
 
         <Divider sx={{ my: 5, borderColor: 'rgba(201,255,61,0.2)' }} />
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: 2 }}>
-          <Typography sx={{ color: 'rgba(247,245,239,0.5)', fontSize: '12px' }}>©{currentYear} Fitness Freak. All rights reserved.</Typography>
-          <Typography sx={{ color: 'rgba(247,245,239,0.5)', fontSize: '12px', letterSpacing: '0.04em' }}>Stronger people. Brighter tomorrows.</Typography>
+          <Typography sx={{ color: 'rgba(247,245,239,0.5)', fontSize: '12px' }}>©{currentYear} PulseForm product concept.</Typography>
+          <Typography sx={{ color: 'rgba(247,245,239,0.5)', fontSize: '12px', letterSpacing: '0.04em' }}>Discover. Plan. Progress.</Typography>
         </Box>
       </Container>
     </Box>

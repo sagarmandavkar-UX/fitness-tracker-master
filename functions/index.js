@@ -19,8 +19,8 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
 
     // Create email message
     const mailOptions = {
-      from: 'Your Name <your-email@gmail.com>',  // Sender address
-      to: 'svatsal64@gmail.com',  // Replace with your email address
+      from: functions.config().email.from || functions.config().email.user,
+      to: functions.config().email.to,
       subject: 'New Inquiry from Contact Form',
       html: `<p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>

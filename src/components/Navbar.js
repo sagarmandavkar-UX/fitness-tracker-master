@@ -13,7 +13,7 @@ import SignUp from './auth/SignUp';
 import { auth } from '../Firebase';
 import '../assets/css/Navbar.css'
 
-const Navbar = ({ darkMode, setDarkMode, onManageSubscription }) => {
+const Navbar = ({ darkMode, setDarkMode }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -87,7 +87,7 @@ const Navbar = ({ darkMode, setDarkMode, onManageSubscription }) => {
     { text: 'Chat', link: '/chat' },
     { text: 'Personalized Workout', link: '/personalized-workout' },
     { text: 'Pricing', link: '/pricing' },
-    { text: 'Contact Us', link: '/contact' },
+    { text: 'Product Feedback', link: '/contact' },
   ];
 
   const menuItemStyle = (isDrawer, path, text) => ({
@@ -151,10 +151,10 @@ const Navbar = ({ darkMode, setDarkMode, onManageSubscription }) => {
         }}
       >
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', minHeight: { xs: '68px', md: '76px' }, px: { xs: 2, md: 5, lg: 7 } }}>
-          <RouterLink to="/" className="brand-lockup" aria-label="Fitness Freak home">
+          <RouterLink to="/" className="brand-lockup" aria-label="PulseForm home">
             <img src={Logo} alt="" className="brand-mark" />
             <Typography component="span" className="brand-name">
-              Fitness<br /><strong>Freak</strong>
+              Pulse<br /><strong>Form</strong>
             </Typography>
           </RouterLink>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
@@ -221,7 +221,7 @@ const Navbar = ({ darkMode, setDarkMode, onManageSubscription }) => {
                   Welcome, {getFirstName(user.displayName || user.email)}
                 </Box>
                 <Button
-                  onClick={onManageSubscription}
+                  onClick={() => navigate('/pricing')}
                   variant="contained"
                   sx={{ 
                     backgroundColor: '#101B18', 
@@ -233,7 +233,7 @@ const Navbar = ({ darkMode, setDarkMode, onManageSubscription }) => {
                     }
                   }}
                 >
-                  Manage Subscription
+                  View Product Plan
                 </Button>
                 <Button
                   onClick={handleLogout}
