@@ -1,5 +1,7 @@
 # PulseForm — Product Management Case Study
 
+[![CI](https://github.com/sagarmandavkar-UX/fitness-tracker-master/actions/workflows/ci.yml/badge.svg)](https://github.com/sagarmandavkar-UX/fitness-tracker-master/actions/workflows/ci.yml)
+
 PulseForm is a personal product-management portfolio project exploring how a fragmented fitness experience can become a clear, motivating journey from exercise discovery to action.
 
 This project adapts and substantially improves an existing fitness-tracker codebase. The work focuses on product strategy, UX direction, feature refinement, quality, and a complete visual redesign. It does not claim ownership of another creator's biography, achievements, partnerships, audience, or business accounts.
